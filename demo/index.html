@@ -1,0 +1,110 @@
+<html>
+<head>
+	<title>AniTraceSVG Demo</title>
+
+	<link href = "styles/main.css" rel = "stylesheet" type = "text/css"/>
+
+	<script src = "../source/dependencies/jquery.js"></script>
+	<script src = "../source/dependencies/easings.js"></script>
+	<script src = "../source/anitrace.js"></script>
+
+	<script src = "main.js"></script>
+</head>
+<body onload = "loaded()">
+	<div id = "animation" style = "visibility: hidden">
+		<svg version = "1.1" xmlns = "http://www.w3.org/2000/svg" xmlns:xlink = "http://www.w3.org/1999/xlink" x = "0px" y = "0px"
+		 width = "500px" height = "308px" viewBox = "0 0 500 308" enable-background = "new 0 0 500 308" xml:space = "preserve">
+		 	<!-- Controller Outer Outline -->
+			<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M495.776,85.902H132.66
+			v1.095c0,1.774-1.451,3.225-3.224,3.225h-8.599c-1.773,0-3.224-1.451-3.224-3.225v-1.095H4.224C2.451,85.902,1,87.353,1,89.127
+			v214.648C1,305.549,2.451,307,4.224,307h491.551c1.773,0,3.224-1.451,3.224-3.225V89.127C499,87.353,497.549,85.902,495.776,85.902z
+			"/>
+
+			<!-- Controller Inner Outline -->
+			<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M485.386,290.868
+			c0,1.774-1.451,3.225-3.224,3.225H17.839c-1.773,0-3.224-1.451-3.224-3.225V124.955c0-1.774,1.451-3.225,3.224-3.225h464.322
+			c1.773,0,3.224,1.451,3.224,3.225V290.868z"/>
+
+			<!-- Controller Decoration -->
+			<!-- From Top Down -->
+			<!-- First -->
+			<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M153.572,122.07v23.329
+			c0,1.774,1.451,3.225,3.224,3.225h136.86c1.773,0,3.224-1.451,3.224-3.225V122.07"/>
+			<!-- Second -->
+			<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M296.881,177.47
+			c0,1.774-1.451,3.225-3.224,3.225h-136.86c-1.773,0-3.224-1.451-3.224-3.225v-16.842c0-1.774,1.451-3.225,3.224-3.225h136.86
+			c1.773,0,3.224,1.451,3.224,3.225V177.47z"/>
+			<!-- Third -->
+			<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M296.881,209.542
+			c0,1.774-1.451,3.225-3.224,3.225h-136.86c-1.773,0-3.224-1.451-3.224-3.225V192.7c0-1.774,1.451-3.225,3.224-3.225h136.86
+			c1.773,0,3.224,1.451,3.224,3.225V209.542z"/>
+			<!-- Outer Start and Select -->
+			<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M296.881,268.131
+			c0,1.774-1.451,3.225-3.224,3.225h-136.86c-1.773,0-3.224-1.451-3.224-3.225v-43.36c0-1.774,1.451-3.225,3.224-3.225h136.86
+			c1.773,0,3.224,1.451,3.224,3.225V268.131z"/>
+			<!-- Fourth -->
+			<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M296.881,293.582v-10.221
+			c0-1.774-1.451-3.225-3.224-3.225h-136.86c-1.773,0-3.224,1.451-3.224,3.225v10.221"/>
+
+			<!-- D-Pad -->
+			<!-- Outline -->
+			<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M74.604,271.356
+			c-4.889,0-8.867-3.979-8.867-8.869v-19.441H46.3c-4.889,0-8.867-3.979-8.867-8.869v-18.634c0-4.89,3.978-8.869,8.867-8.869h19.437
+			v-19.44c0-4.89,3.978-8.869,8.867-8.869h18.63c4.889,0,8.867,3.979,8.867,8.869v19.44h19.436c4.889,0,8.867,3.979,8.867,8.869
+			v18.634c0,4.89-3.978,8.869-8.867,8.869h-19.436v19.441c0,4.89-3.978,8.869-8.867,8.869H74.604z"/>
+			<!-- D-Pad Up -->
+			<path id = "d_up" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M96.459,209.094v-21.859
+			c0-1.774-1.451-3.225-3.224-3.225h-18.63c-1.773,0-3.224,1.451-3.224,3.225v21.859"/>
+			<!-- D-Pad Left -->
+			<path id = "d_left" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M68.155,212.319H46.3
+			c-1.773,0-3.224,1.451-3.224,3.225v18.634c0,1.774,1.451,3.225,3.224,3.225h21.855"/>
+			<!-- D-Pad Down -->
+			<path id = "d_down" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M71.38,240.628v21.859
+			c0,1.774,1.451,3.225,3.224,3.225h18.63c1.773,0,3.224-1.451,3.224-3.225v-21.859"/>
+			<!-- D-Pad Right -->
+			<path id = "d_right" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M99.683,237.403h21.855
+			c1.773,0,3.224-1.451,3.224-3.225v-18.634c0-1.774-1.451-3.225-3.224-3.225H99.683"/>
+			<!-- Circle -->
+			<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M93.503,224.861
+			c0,5.294-4.291,9.586-9.584,9.586c-5.293,0-9.584-4.292-9.584-9.586c0-5.294,4.291-9.586,9.584-9.586
+			C89.212,215.276,93.503,219.567,93.503,224.861z"/>
+
+			<!-- A and B -->
+			<!-- Outer A -->
+			<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M442.935,268.131
+			c0,1.774-1.451,3.225-3.224,3.225h-48.725c-1.773,0-3.224-1.451-3.224-3.225v-48.735c0-1.774,1.451-3.225,3.224-3.225h48.725
+			c1.773,0,3.224,1.451,3.224,3.225V268.131z"/>
+			<!-- Outer B -->
+			<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M375.222,268.131
+			c0,1.774-1.451,3.225-3.224,3.225h-48.725c-1.773,0-3.224-1.451-3.224-3.225v-48.735c0-1.774,1.451-3.225,3.224-3.225h48.725
+			c1.773,0,3.224,1.451,3.224,3.225V268.131z"/>
+			<!-- Inner A -->
+			<path id = "button_a" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M437.203,243.764
+			c0,12.072-9.785,21.859-21.855,21.859s-21.855-9.787-21.855-21.859c0-12.072,9.785-21.859,21.855-21.859
+			S437.203,231.691,437.203,243.764z"/>
+			<!-- Inner B -->
+			<path id = "button_b" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M369.489,243.764
+			c0,12.072-9.785,21.859-21.855,21.859c-12.07,0-21.855-9.787-21.855-21.859c0-12.072,9.785-21.859,21.855-21.859
+			C359.705,221.905,369.489,231.691,369.489,243.764z"/>
+
+			<!-- Start and Select -->
+			<!-- Select -->
+			<path id = "button_select" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M208.387,246.451
+			c0,3.661-2.967,6.629-6.628,6.629h-24.004c-3.661,0-6.628-2.968-6.628-6.629l0,0c0-3.661,2.967-6.629,6.628-6.629h24.004
+			C205.42,239.822,208.387,242.79,208.387,246.451L208.387,246.451z"/>
+			<!-- Start -->
+			<path id = "button_start" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M279.326,246.451
+			c0,3.661-2.967,6.629-6.628,6.629h-24.004c-3.661,0-6.628-2.968-6.628-6.629l0,0c0-3.661,2.967-6.629,6.628-6.629h24.004
+			C276.358,239.822,279.326,242.79,279.326,246.451L279.326,246.451z"/>
+
+			<!-- Logo -->
+			<!-- j -->
+			<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+			M11.107,1l30.321,70.763H1V54.073h10.107v8.845h16.424L1,1H11.107z"/>
+			<!-- m -->
+			<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+			M97.017,1v70.763H86.91V24.587L66.696,71.763H56.589L33.848,18.691h-7.58V1h10.107l25.268,58.966L86.91,1H97.017z"/>
+		</svg>
+	</div>
+</body>
+</html>
