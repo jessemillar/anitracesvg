@@ -1,0 +1,246 @@
+<html>
+<head>
+	<title>Jesse Millar</title>
+
+	<meta name = "viewport" content = "initial-scale = 0.55">
+
+	<link href = "styles/main.css" rel = "stylesheet" type = "text/css"/>
+
+	<script src = "scripts/jquery.js"></script>
+	<script src = "scripts/easings.js"></script>
+	<script src = "scripts/main.js"></script>
+	<script src = "scripts/statistiks.js"></script>
+</head>
+<body onkeydown = "keyDown(event)" onkeyup = "keyUp(event)" ontouchend = "releaseAll()" onmouseup = "releaseAll()" onload = "loaded()">
+	<div id = "controller">
+		<div id = "animation" style = "visibility: hidden">
+			<!-- iOS Touch Controls -->
+			<div id = "div_d_up" ontouchstart = "tiptap(event); press('d_up')" onmousedown = "press('d_up')"></div>
+			<div id = "div_d_down" ontouchstart = "tiptap(event); press('d_down')" onmousedown = "press('d_down')"></div>
+			<div id = "div_d_left" ontouchstart = "tiptap(event); press('d_left')" onmousedown = "press('d_left')"></div>
+			<div id = "div_d_right" ontouchstart = "tiptap(event); press('d_right')" onmousedown = "press('d_right')"></div>
+
+			<div id = "div_button_a" class = "button_big" ontouchstart = "tiptap(event); press('button_a')" onmousedown = "press('button_a')"></div>
+			<div id = "div_button_b" class = "button_big" ontouchstart = "tiptap(event); press('button_b')" onmousedown = "press('button_b')"></div>
+
+			<div id = "div_button_start" class = "button_small" ontouchstart = "tiptap(event); press('button_start')" onmousedown = "press('button_start')"></div>
+			<div id = "div_button_select" class = "button_small" ontouchstart = "tiptap(event); press('button_select')" onmousedown = "press('button_select')"></div>
+
+			<svg version = "1.1" xmlns = "http://www.w3.org/2000/svg" xmlns:xlink = "http://www.w3.org/1999/xlink" x = "0px" y = "0px"
+			 width = "500px" height = "308px" viewBox = "0 0 500 308" enable-background = "new 0 0 500 308" xml:space = "preserve">
+			 	<!-- Controller Outer Outline -->
+				<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M495.776,85.902H132.66
+				v1.095c0,1.774-1.451,3.225-3.224,3.225h-8.599c-1.773,0-3.224-1.451-3.224-3.225v-1.095H4.224C2.451,85.902,1,87.353,1,89.127
+				v214.648C1,305.549,2.451,307,4.224,307h491.551c1.773,0,3.224-1.451,3.224-3.225V89.127C499,87.353,497.549,85.902,495.776,85.902z
+				"/>
+
+				<!-- Controller Inner Outline -->
+				<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M485.386,290.868
+				c0,1.774-1.451,3.225-3.224,3.225H17.839c-1.773,0-3.224-1.451-3.224-3.225V124.955c0-1.774,1.451-3.225,3.224-3.225h464.322
+				c1.773,0,3.224,1.451,3.224,3.225V290.868z"/>
+
+				<!-- Controller Decoration -->
+				<!-- From Top Down -->
+				<!-- First -->
+				<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M153.572,122.07v23.329
+				c0,1.774,1.451,3.225,3.224,3.225h136.86c1.773,0,3.224-1.451,3.224-3.225V122.07"/>
+				<!-- Second -->
+				<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M296.881,177.47
+				c0,1.774-1.451,3.225-3.224,3.225h-136.86c-1.773,0-3.224-1.451-3.224-3.225v-16.842c0-1.774,1.451-3.225,3.224-3.225h136.86
+				c1.773,0,3.224,1.451,3.224,3.225V177.47z"/>
+				<!-- Third -->
+				<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M296.881,209.542
+				c0,1.774-1.451,3.225-3.224,3.225h-136.86c-1.773,0-3.224-1.451-3.224-3.225V192.7c0-1.774,1.451-3.225,3.224-3.225h136.86
+				c1.773,0,3.224,1.451,3.224,3.225V209.542z"/>
+				<!-- Outer Start and Select -->
+				<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M296.881,268.131
+				c0,1.774-1.451,3.225-3.224,3.225h-136.86c-1.773,0-3.224-1.451-3.224-3.225v-43.36c0-1.774,1.451-3.225,3.224-3.225h136.86
+				c1.773,0,3.224,1.451,3.224,3.225V268.131z"/>
+				<!-- Fourth -->
+				<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M296.881,293.582v-10.221
+				c0-1.774-1.451-3.225-3.224-3.225h-136.86c-1.773,0-3.224,1.451-3.224,3.225v10.221"/>
+
+				<!-- D-Pad -->
+				<!-- Outline -->
+				<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M74.604,271.356
+				c-4.889,0-8.867-3.979-8.867-8.869v-19.441H46.3c-4.889,0-8.867-3.979-8.867-8.869v-18.634c0-4.89,3.978-8.869,8.867-8.869h19.437
+				v-19.44c0-4.89,3.978-8.869,8.867-8.869h18.63c4.889,0,8.867,3.979,8.867,8.869v19.44h19.436c4.889,0,8.867,3.979,8.867,8.869
+				v18.634c0,4.89-3.978,8.869-8.867,8.869h-19.436v19.441c0,4.89-3.978,8.869-8.867,8.869H74.604z"/>
+				<!-- D-Pad Up -->
+				<path id = "d_up" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M96.459,209.094v-21.859
+				c0-1.774-1.451-3.225-3.224-3.225h-18.63c-1.773,0-3.224,1.451-3.224,3.225v21.859"/>
+				<!-- D-Pad Left -->
+				<path id = "d_left" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M68.155,212.319H46.3
+				c-1.773,0-3.224,1.451-3.224,3.225v18.634c0,1.774,1.451,3.225,3.224,3.225h21.855"/>
+				<!-- D-Pad Down -->
+				<path id = "d_down" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M71.38,240.628v21.859
+				c0,1.774,1.451,3.225,3.224,3.225h18.63c1.773,0,3.224-1.451,3.224-3.225v-21.859"/>
+				<!-- D-Pad Right -->
+				<path id = "d_right" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M99.683,237.403h21.855
+				c1.773,0,3.224-1.451,3.224-3.225v-18.634c0-1.774-1.451-3.225-3.224-3.225H99.683"/>
+				<!-- Circle -->
+				<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M93.503,224.861
+				c0,5.294-4.291,9.586-9.584,9.586c-5.293,0-9.584-4.292-9.584-9.586c0-5.294,4.291-9.586,9.584-9.586
+				C89.212,215.276,93.503,219.567,93.503,224.861z"/>
+
+				<!-- A and B -->
+				<!-- Outer A -->
+				<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M442.935,268.131
+				c0,1.774-1.451,3.225-3.224,3.225h-48.725c-1.773,0-3.224-1.451-3.224-3.225v-48.735c0-1.774,1.451-3.225,3.224-3.225h48.725
+				c1.773,0,3.224,1.451,3.224,3.225V268.131z"/>
+				<!-- Outer B -->
+				<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M375.222,268.131
+				c0,1.774-1.451,3.225-3.224,3.225h-48.725c-1.773,0-3.224-1.451-3.224-3.225v-48.735c0-1.774,1.451-3.225,3.224-3.225h48.725
+				c1.773,0,3.224,1.451,3.224,3.225V268.131z"/>
+				<!-- Inner A -->
+				<path id = "button_a" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M437.203,243.764
+				c0,12.072-9.785,21.859-21.855,21.859s-21.855-9.787-21.855-21.859c0-12.072,9.785-21.859,21.855-21.859
+				S437.203,231.691,437.203,243.764z"/>
+				<!-- Inner B -->
+				<path id = "button_b" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M369.489,243.764
+				c0,12.072-9.785,21.859-21.855,21.859c-12.07,0-21.855-9.787-21.855-21.859c0-12.072,9.785-21.859,21.855-21.859
+				C359.705,221.905,369.489,231.691,369.489,243.764z"/>
+
+				<!-- Start and Select -->
+				<!-- Select -->
+				<path id = "button_select" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M208.387,246.451
+				c0,3.661-2.967,6.629-6.628,6.629h-24.004c-3.661,0-6.628-2.968-6.628-6.629l0,0c0-3.661,2.967-6.629,6.628-6.629h24.004
+				C205.42,239.822,208.387,242.79,208.387,246.451L208.387,246.451z"/>
+				<!-- Start -->
+				<path id = "button_start" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linejoin = "round" stroke-miterlimit = "10" d = "M279.326,246.451
+				c0,3.661-2.967,6.629-6.628,6.629h-24.004c-3.661,0-6.628-2.968-6.628-6.629l0,0c0-3.661,2.967-6.629,6.628-6.629h24.004
+				C276.358,239.822,279.326,242.79,279.326,246.451L279.326,246.451z"/>
+
+				<!-- Logo -->
+				<!-- j -->
+				<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+				M11.107,1l30.321,70.763H1V54.073h10.107v8.845h16.424L1,1H11.107z"/>
+				<!-- m -->
+				<path fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+				M97.017,1v70.763H86.91V24.587L66.696,71.763H56.589L33.848,18.691h-7.58V1h10.107l25.268,58.966L86.91,1H97.017z"/>
+			</svg>
+		</div>
+
+		<div id = "fader">
+			<svg version = "1.1" xmlns = "http://www.w3.org/2000/svg" xmlns:xlink = "http://www.w3.org/1999/xlink" x = "0px" y = "0px"
+			 width = "500px" height = "308px" viewBox = "0 0 500 308" enable-background = "new 0 0 500 308" xml:space = "preserve">
+				<!-- game_developer -->	
+				<!-- r -->
+				<path style = "opacity: 0" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+				M493.294,66.056L499,71.763 M487.588,60.349v11.415 M487.588,66.056h8.559c1.576,0,2.853-1.278,2.853-2.854
+				s-1.277-2.854-2.853-2.854h-8.559"/>
+				<!-- e -->
+				<path style = "opacity: 0" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+				M478.724,71.763h-11.412V60.349h11.412 M478.724,66.056h-11.412"/>
+				<!-- p -->
+				<path style = "opacity: 0" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+				M447.036,71.763V60.349 M447.036,66.056h8.559c1.576,0,2.853-1.278,2.853-2.854s-1.277-2.854-2.853-2.854h-8.559"/>
+				<!-- o -->
+				<path style = "opacity: 0" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+				M438.173,66.056c0,3.152-2.555,5.707-5.706,5.707s-5.706-2.555-5.706-5.707c0-3.152,2.555-5.707,5.706-5.707
+				S438.173,62.904,438.173,66.056z"/>
+				<!-- l -->
+				<path style = "opacity: 0" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+				M417.897,71.763h-11.412V60.349"/>
+				<!-- e -->
+				<path style = "opacity: 0" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+				M397.621,71.763h-11.412V60.349h11.412 M397.621,66.056h-11.412"/>
+				<!-- v -->
+				<path style = "opacity: 0" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+				M377.345,60.349l-5.706,11.415l-5.706-11.415"/>
+				<!-- e -->
+				<path style = "opacity: 0" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+				M357.07,71.763h-11.412V60.349h11.412 M357.07,66.056h-11.412"/>
+				<!-- d -->
+				<path style = "opacity: 0" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+				M336.794,66.056c0,3.152-2.555,5.707-5.706,5.707h-5.706V60.349h5.706C334.239,60.349,336.794,62.904,336.794,66.056z"/>
+				<!-- _ -->
+				<path style = "opacity: 0" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+				M305.106,71.763h11.412"/>
+				<!-- e -->
+				<path style = "opacity: 0" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+				M296.242,71.763H284.83V60.349h11.412 M296.242,66.056H284.83"/>
+				<!-- m -->
+				<path style = "opacity: 0" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+				M264.554,60.349v11.415 M275.967,71.763V60.349 M264.554,60.349l5.706,5.707 M275.967,60.349l-5.706,5.707"/>
+				<!-- a -->
+				<path style = "opacity: 0" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+				M244.278,71.763l5.706-11.415l5.706,11.415"/>
+				<!-- g -->
+				<path style = "opacity: 0" fill = "none" stroke = "#FFFFFF" stroke-width = "2" stroke-linecap = "round" stroke-linejoin = "round" stroke-miterlimit = "10" d = "
+				M229.709,66.056h5.706 M229.709,60.349c-3.151,0-5.706,2.555-5.706,5.707c0,3.152,2.555,5.707,5.706,5.707s5.706-2.555,5.706-5.707"
+				/>
+			 </svg>
+		</div>
+	</div>
+
+	<div id = "content">
+		<div id = "social">
+			<div id = "twitter">
+				<a href = "http://twitter.com/jessemillar">
+					<svg version = "1.1" xmlns = "http://www.w3.org/2000/svg" xmlns:xlink = "http://www.w3.org/1999/xlink" x = "0px" y = "0px" viewBox = "0 0 55 55" enable-background = "new 0 0 55 55" xml:space = "preserve">
+						<path fill = "#FFFFFF" d = "M35.4,15.4c2.4,0,4.6,1,6.2,2.7c1.9-0.4,3.7-1.1,5.4-2.1c-0.6,2-2,3.6-3.7,4.7c1.7-0.2,3.3-0.7,4.9-1.3c-1.1,1.7-2.6,3.2-4.2,4.4c0,0.4,0,0.7,0,1.1c0,11.2-8.5,24.1-24.1,24.1c-4.8,0-9.2-1.4-13-3.8c0.7,0.1,1.3,0.1,2,0.1c4,0,7.6-1.4,10.5-3.6c-3.7-0.1-6.8-2.5-7.9-5.9c0.5,0.1,1,0.2,1.6,0.2c0.8,0,1.5-0.1,2.2-0.3c-3.9-0.8-6.8-4.2-6.8-8.3c0,0,0-0.1,0-0.1c1.1,0.6,2.4,1,3.8,1.1c-2.3-1.5-3.8-4.1-3.8-7c0-1.6,0.4-3,1.1-4.3c4.2,5.1,10.4,8.5,17.5,8.8C27,25.2,27,24.6,27,23.9C27,19.2,30.8,15.4,35.4,15.4 M48.1,19.4C48.1,19.4,48.1,19.4,48.1,19.4L48.1,19.4 M35.4,13.4c-5.7,0-10.3,4.5-10.5,10.2c-5.3-0.8-10.2-3.6-13.7-7.9c-0.4-0.5-1-0.7-1.5-0.7c-0.1,0-0.1,0-0.2,0C8.9,15,8.3,15.4,8,16c-0.9,1.6-1.4,3.4-1.4,5.3c0,1.5,0.3,2.9,0.9,4.3c-0.6,0.4-1,1-1,1.7l0,0.2c0,2.9,1.2,5.6,3.2,7.5c-0.2,0.5-0.3,1-0.1,1.5c0.8,2.5,2.5,4.6,4.8,5.9c-1.7,0.7-3.6,1-5.5,1c-0.6,0-1.2,0-1.8-0.1c-0.1,0-0.2,0-0.2,0c-0.8,0-1.6,0.5-1.9,1.3c-0.3,0.9,0,1.9,0.8,2.4C10,49.5,14.9,51,19.8,51c9.8,0,16-4.6,19.4-8.5c4.3-4.8,6.7-11.2,6.7-17.6c0,0,0-0.1,0-0.1c1.5-1.2,2.8-2.6,3.9-4.2c0.5-0.7,0.4-1.7-0.1-2.4c-0.3-0.3-0.7-0.6-1.1-0.7c0.1-0.3,0.2-0.5,0.3-0.8c0.3-0.8,0-1.7-0.7-2.2c-0.4-0.3-0.8-0.4-1.2-0.4c-0.4,0-0.7,0.1-1,0.3c-1.2,0.7-2.4,1.2-3.8,1.6C40.3,14.3,37.9,13.4,35.4,13.4L35.4,13.4z"/>
+					</svg>
+				</a>
+			</div>
+			<div id = "email">
+				<a href = "mailto:jesse@jessemillar.com">
+					<svg version = "1.1" xmlns = "http://www.w3.org/2000/svg" xmlns:xlink = "http://www.w3.org/1999/xlink" x = "0px" y = "0px" viewBox = "0 0 55 55" enable-background = "new 0 0 55 55" xml:space = "preserve">
+						<path fill = "#FFFFFF" d = "M36.5,4v7.1h1.7c2,0,3.6,1.6,3.6,3.6V27h-9.1L24,35.8V51h-3.8V27h-7.1V14.7c0-2,1.6-3.6,3.6-3.6h17.9V7.1h-3.1V4h3.1h0.6H36.5 M24,33.1l6.1-6.1H24V33.1 M36.5,2h-1.3h-0.6h-3.1c-1.1,0-2,0.9-2,2v3.1c0,1.1,0.9,2,2,2h1.1v0.1H16.8c-3.1,0-5.6,2.5-5.6,5.6V27c0,1.1,0.9,2,2,2h5.1v22c0,1.1,0.9,2,2,2H24c1.1,0,2-0.9,2-2V36.6l7.6-7.6h8.2c1.1,0,2-0.9,2-2V14.7c0-3-2.4-5.5-5.3-5.6V4C38.5,2.9,37.6,2,36.5,2L36.5,2z"/>
+					</svg>
+				</a>
+			</div>
+			<div id = "github">
+				<a href = "http://github.com/jessemillar">
+					<svg version = "1.1" xmlns = "http://www.w3.org/2000/svg" xmlns:xlink = "http://www.w3.org/1999/xlink" x = "0px" y = "0px" viewBox = "0 0 55 55" enable-background = "new 0 0 55 55" xml:space = "preserve">
+						<path fill = "#FFFFFF" d = "M39.6,11.2c0.2,0,0.4,0,0.5,0.1c0.4,0.6,1.1,2.3,0.5,6c0.5,0.8,2.8,2.6,2.8,7.5c0,9.9-5.9,11-11.1,11.5c1.7,1.1,2.2,2.4,2.2,6c0,3.6,0,4.1,0,4.9c0,1.4,2,2,1.9,2.4c0,0.2-0.5,0.3-1,0.3c-0.5,0-1.1-0.1-1.4-0.2c-2.1-0.7-1.9-2.5-1.9-2.5L32,42.5c0,0,0.1-2.6-0.8-2.6c0,0.5,0,6,0,7.9c0,1.7,1.2,2.2,1.2,2.9c0,0.3-0.2,0.4-0.5,0.4c-0.7,0-1.9-0.7-2.4-1.2c-1-1-0.9-3.2-0.9-4.9c0-1.7,0-5.3,0-5.3l-0.7,0c0,0,0.3,8-0.4,9.4c-0.6,1.3-2,2-2.8,2c-0.3,0-0.5-0.1-0.5-0.4c0-0.6,0.6-0.4,1-1.7c0.3-1.1,0.2-9.2,0.2-9.2s-0.8,0.5-0.8,2c0,0.7,0,4.7,0,5.9c0,1.5-2.1,2.3-3.1,2.3c-0.5,0-1.2,0-1.2-0.3c0-0.7,1.9-1.1,1.9-2.5c0-1.2,0-4.4,0-4.4s-1,0.2-2.4,0.2c-3.5,0-4.6-2.2-5.1-3.5c-0.7-1.6-1.6-2.4-2.5-3c-0.6-0.4-0.7-0.8,0-0.9c0.2,0,0.4-0.1,0.6-0.1c2.6,0,3.4,3.6,5.4,4.2c0.6,0.2,1.2,0.3,1.8,0.3c1,0,2-0.2,2.6-0.6c0.1-1.3,1-2.3,1.8-2.9c-5.3-0.5-11.3-2.4-11.5-12c-0.1-3.4,1.1-4.7,2.5-6.5c-1.1-3.9,0.4-6.5,0.4-6.5s0.1,0,0.4,0c0.8,0,2.9,0.3,6.2,2.6c1.3-0.5,3.7-0.8,6.1-0.8c2,0,4.1,0.2,5.4,0.6C35.3,12.7,38,11.2,39.6,11.2 M39.6,9.2c-2.1,0-4.9,1.5-6.3,2.4c-1.4-0.3-3.2-0.4-5.1-0.4c-1.2,0-3.7,0.1-5.8,0.6c-3.2-2.1-5.4-2.4-6.5-2.4c-0.4,0-0.7,0-0.8,0.1c-0.6,0.1-1.1,0.5-1.3,1c-0.2,0.3-1.6,3-0.8,7c-1.3,1.7-2.4,3.4-2.3,7c0.1,4.1,1.2,7,2.7,9c-0.2,0-0.5-0.1-0.8-0.1c-0.3,0-0.6,0-1,0.1c-1.1,0.2-1.8,0.9-2,1.9c-0.2,1,0.3,2,1.4,2.7c0.6,0.4,1.3,0.9,1.8,2.1c1.3,3.1,3.7,4.7,7,4.7c0.1,0,0.3,0,0.4,0c0,0.8,0,1.5,0,2.1c-0.1,0.1-0.3,0.2-0.4,0.3c-0.5,0.4-1.5,1.1-1.5,2.4c0,0.7,0.3,2.3,3.2,2.3c0.3,0,0.7,0,1.1-0.1c0.4,0.7,1.1,1.2,2.2,1.2c1.1,0,2.5-0.6,3.6-1.6C29,52,30.5,53,31.9,53c0.9,0,1.7-0.5,2.1-1.2c0.4,0.1,0.9,0.1,1.3,0.1c2.4,0,2.9-1.4,3-2c0.2-1.4-0.8-2.2-1.4-2.6c-0.2-0.1-0.4-0.3-0.5-0.4c0-0.2,0-0.5,0-0.8c0-0.7,0-1.7,0-3.9c0-1.8-0.1-3.3-0.5-4.5c4.4-0.9,9.5-3.5,9.5-13c0-4.5-1.8-6.8-2.7-8c0.5-3.4-0.2-5.4-0.9-6.5-0.2-0.4-0.6-0.7-1-0.8C40.4,9.3,40,9.2,39.6,9.2L39.6,9.2z M19.8,37.8c-0.4,0-0.8-0.1-1.2-0.2c-0.2-0.1-0.5-0.4-0.8-0.8c0.9,0.4,1.8,0.7,2.7,0.9C20.3,37.8,20.1,37.8,19.8,37.8L19.8,37.8z"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+
+		<center><a href = "http://www.jessemillar.com/zambies/"><img src = "images/zambies.png"></a></center>
+		<br>
+		<a href = "http://youtu.be/2EBCe-lPprs" target = "_blank">Wassup, homes</a>.  Kick back, relax, and smoke this bubble pipe.  There's some chocolate milk on the coffee table if you'd like.
+		<br>
+		<br>
+		The name's Jesse.  Jesse <b>Millar</b> if you simply <b>must</b> know.  I'm a pretty cool guy. I'm basically addicted to programming and game design. I longboard. <b>A LOT.</b> Oh, and I can't get fat.
+		<br>
+		<br>
+		<center>I've tried.</center>
+		<br>
+		Projects?  Yeah.  I've got projects.  Not too long ago, I decided I <a href = "http://youtu.be/MejbOFk7H6c" target = "_blank">needed</a> a way to quickly make HTML5 games. HTML5 is <b>cool</b>. JavaScript is <b>cool</b>. Game engines are <b>cool</b>. There had to be a <b>cool</b> JavaScript game engine for HTML5, right? Turns out there are plenty of <b>cool</b> JavaScript game engines, but I didn't really like any of them.
+		<br>
+		<br>
+		<center>No, no, it's not you. It's me.</center>
+		<br>
+		<i>Lorina</i> is my own JavaScript game engine that tries to do what other game engines couldn't: Make sense to my crazy brain. In making it, I tried to make everything simple and memorable. Basically, I wanted <i>Lorina</i> to have a lemme-do-this-and-get-out-of-your-way attitude.
+		<br>
+		<br>
+		As for <i>Lorina's</i> name and logo, you should know that I really dig <u><a href = "http://en.wikipedia.org/wiki/Alice's_Adventures_in_Wonderland">Alice's Adventures in Wonderland</a></u>. Lorina is named after <i>Lorina Charlotte Liddell</i>, sister of <i>Alice Pleasance Liddell</i>. The fictional <i>Alice</i> is based off this real <i>Alice</i>. Her sister <i>Lorina</i> has a cameo appearance as the <u><a href = "http://en.wikipedia.org/wiki/Lory_(Alice's_Adventures_in_Wonderland)">Lory</a></u> in Wonderland. A <u><a href = "http://en.wikipedia.org/wiki/Lories_and_lorikeets">lory</a></u> is a "type" of parrot, so I drew a parrot.
+		<br>
+		<br>
+		<center>Parrots are <b>cool</b>.</center>
+		<br>
+		Oh, before I forget, the whole project is open-sourced (within <u><a href = "https://github.com/jessemillar/Lorina/blob/master/LICENSE.md">licensing limitations</a></u>) on its <u><a href = "https://github.com/jessemillar/Lorina">GitHub page</a></u>. Keep in mind that <i>Lorina's</i> still young which means not much is set in stone. <a href = "http://youtu.be/fv7qU-MnMS8" target = "_blank">Whatever</a>. Here's a couple of <u><a href = "http://www.jessemillar.com/lab/lorina/">demo</a></u> <u><a href = "http://www.jessemillar.com/lab/lorina/physics/">pages</a></u>. Proper documentation is on its way. Have fun, hackers!
+		<br>
+		<br>
+		<br>
+		<center>
+			<a href = "https://github.com/jessemillar/Lorina">
+				<svg version = "1.1" xmlns = "http://www.w3.org/2000/svg" xmlns:xlink = "http://www.w3.org/1999/xlink" x = "0px" y = "0px" width = "117px" height = "150px" viewBox = "0 0 117 150" enable-background = "new 0 0 117 150" xml:space = "preserve">
+					<path fill = "#FFFFFF" d = "M105.6,24.1h0.1c-1.3-1.3-2.1-3.1-2.1-5.1c0-4,3.3-7.3,7.3-7.3c3.2,0,5.8-2.6,5.8-5.8S114.1,0,110.9,0H58.5C26.3,0,0.3,26.1,0.3,58.2c0,16.1,6.5,30.6,17.1,41.2L67.9,150c29.1-19.6,48.3-52.7,48.8-90.3h0c0-0.5,0-1,0-1.5C116.7,45.5,112.6,33.7,105.6,24.1z"/>
+					<path fill = "#85144B" d = "M100.5,26.9c-1.7-2.2-2.7-5-2.7-7.9c0-7.2,5.9-13.1,13.1-13.1H58.5C29.6,5.8,6.1,29.3,6.1,58.2c0,0,0,0,0,0c10.9,2.5,19.1,12.3,19.1,24c0,4.8-1.4,9.2-3.7,13c0,0,0.1,0.1,0.1,0.1l47,47c25.7-19.1,42.3-49.7,42.3-84.2C110.9,46.5,107,35.6,100.5,26.9L100.5,26.9z"/>
+					<path fill = "#FF851B" d = "M36.8,58.2H6.1c0,14.5,5.9,27.6,15.3,37C30.9,85.8,36.8,72.7,36.8,58.2z"/>
+					<circle fill = "#FFFFFF" cx = "58.5" cy = "58.2" r = "17.5"/>
+					<circle fill = "#111111" cx = "58.5" cy = "58.2" r = "11.6"/>
+				</svg>
+			</a>
+		</center>
+
+		<div id = "copyright">
+			&#169;2014 All rights reserved.
+		</div>
+	</div>
+</body>
+</html>
