@@ -2,10 +2,10 @@ body {
 	min-width: 550px;
 	min-height: 400px;
 
-	margin: 0px;
-	padding: 0px;
+	margin: 0;
+	padding: 0;
 
-	background-color: #01FF70;
+	background-color: #111111;
 }
 
 #animation {
